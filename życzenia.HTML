@@ -1,0 +1,73 @@
+<html>
+<meta http-equiv="Content-type" content="text/html; charset=windows-1250" />
+<head>
+<link rel="Stylesheet" type="text/css" href="style/css3c13.css" />
+</head>
+<body>
+<img src="Wiosenka.png"width=452px height 186px alt="obrazek do kartki świątecznej" align="right" />
+<br />
+<h1>WESOLEJ WIOSNY</h1>
+<p>
+  Pokoj na ziemi ludziom,<br />
+a w niebie cisza gwiazd,<br />
+pierwsze kwiaty kwitna,<br />
+swiat sie chlebem dzieli.<br />
+Wiosna ma dzis wiosenny blask<br />
+Pieknej i radosnej<br />
+WIOSNY!
+</p>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<marquee><p class="pozdro">MILEGO DNIA</p></marquee>
+<script type="text/javascript">
+var S=[];
+
+function init(IM, HM, i) {
+  for (i=0; i<HM; i++) {
+    (S[i]={}).o=document.createElement('img');
+    with (S[i].o) {
+      src=IM;
+      style.position="absolute";
+    }
+    with (Math) {
+      S[i].dx=0;
+      S[i].xp=random()*(document.body.clientWidth-50);
+      S[i].yp=random()*document.body.clientHeight;
+      S[i].am=random()*20;
+      S[i].stx=0.02+random()/10;
+      S[i].sty=0.7+random();
+    }
+    document.body.appendChild(S[i].o);
+  }
+  snow(HM);
+}
+
+function snow(HM, i) {
+  for(i=0; i<HM; i++) {
+    with (S[i]) {
+      yp+=sty;
+      if (yp > document.body.clientHeight-50) {
+        with (Math) {
+          xp=random()*(document.body.clientWidth-am-30);
+          yp=0;
+          stx=0.02+random()/10;
+          sty=0.7+random();
+        }
+      }
+      dx+=stx;
+      o.style.top=~~(yp)+"px";
+      o.style.left=~~(xp+am*Math.sin(dx))+"px";
+    }
+  }
+  setTimeout("snow("+HM+")",10);
+}
+
+onload=function() {init('kwiatson.jpg', 46);}
+
+</script>
